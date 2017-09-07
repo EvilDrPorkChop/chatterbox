@@ -947,3 +947,20 @@ System.NullReferenceException: The property editor with alias Our.Umbraco.Nested
  2017-09-06 20:25:23,287 [P15516/D8/T113] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
  2017-09-06 20:25:23,289 [P15516/D8/T113] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.HealthCheck.HealthCheck
  2017-09-06 20:25:23,302 [P15516/D8/T113] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.HealthCheck.HealthCheck (took 13ms)
+ 2017-09-06 20:29:37,165 [P15516/D8/T131] INFO  Umbraco.Core.MainDom - Stopping...
+ 2017-09-06 20:29:37,165 [P15516/D8/T131] INFO  Umbraco.Core.MainDom - Released MainDom.
+ 2017-09-06 20:29:37,165 [P15516/D8/T131] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2017-09-06 20:29:37,165 [P15516/D8/T131] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2017-09-06 20:29:37,165 [P15516/D8/T131] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2017-09-06 20:29:37,165 [P15516/D8/T131] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2017-09-06 20:29:37,165 [P15516/D8/T131] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2017-09-06 20:29:37,165 [P15516/D8/T131] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2017-09-06 20:29:37,165 [P15516/D8/T131] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2017-09-06 20:29:37,165 [P15516/D8/T135] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2017-09-06 20:29:37,165 [P15516/D8/T136] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2017-09-06 20:29:37,165 [P15516/D8/T131] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2017-09-06 20:29:37,165 [P15516/D8/T136] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2017-09-06 20:29:37,165 [P15516/D8/T135] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2017-09-06 20:29:37,180 [P15516/D8/T131] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2017-09-06 20:29:37,180 [P15516/D8/T131] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2017-09-06 20:29:37,180 [P15516/D8/T135] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
