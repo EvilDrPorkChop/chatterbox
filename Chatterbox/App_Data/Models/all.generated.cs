@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "21b67065de6dbb61")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "527c23316c07d936")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
 
 
 // FILE: models.generated.cs
@@ -316,6 +316,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// <summary>Description</summary>
 		string SeoMetaDescription { get; }
 
+		/// <summary>Title</summary>
+		string SeoMetaTitle { get; }
+
 		/// <summary>Hide in Navigation</summary>
 		bool UmbracoNavihide { get; }
 	}
@@ -368,6 +371,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Description</summary>
 		public static string GetSeoMetaDescription(INavigationBase that) { return that.GetPropertyValue<string>("seoMetaDescription"); }
+
+		///<summary>
+		/// Title: A 57 Character page title displayed in Google.
+		///</summary>
+		[ImplementPropertyType("seoMetaTitle")]
+		public string SeoMetaTitle
+		{
+			get { return GetSeoMetaTitle(this); }
+		}
+
+		/// <summary>Static getter for Title</summary>
+		public static string GetSeoMetaTitle(INavigationBase that) { return that.GetPropertyValue<string>("seoMetaTitle"); }
 
 		///<summary>
 		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
@@ -462,6 +477,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Title: A 57 Character page title displayed in Google.
+		///</summary>
+		[ImplementPropertyType("seoMetaTitle")]
+		public string SeoMetaTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaTitle(this); }
+		}
+
+		///<summary>
 		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
 		///</summary>
 		[ImplementPropertyType("umbracoNavihide")]
@@ -548,6 +572,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string SeoMetaDescription
 		{
 			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Title: A 57 Character page title displayed in Google.
+		///</summary>
+		[ImplementPropertyType("seoMetaTitle")]
+		public string SeoMetaTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaTitle(this); }
 		}
 
 		///<summary>
@@ -667,6 +700,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Title: A 57 Character page title displayed in Google.
+		///</summary>
+		[ImplementPropertyType("seoMetaTitle")]
+		public string SeoMetaTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaTitle(this); }
+		}
+
+		///<summary>
 		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
 		///</summary>
 		[ImplementPropertyType("umbracoNavihide")]
@@ -735,6 +777,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string SeoMetaDescription
 		{
 			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Title: A 57 Character page title displayed in Google.
+		///</summary>
+		[ImplementPropertyType("seoMetaTitle")]
+		public string SeoMetaTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaTitle(this); }
 		}
 
 		///<summary>
@@ -815,6 +866,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string SeoMetaDescription
 		{
 			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Title: A 57 Character page title displayed in Google.
+		///</summary>
+		[ImplementPropertyType("seoMetaTitle")]
+		public string SeoMetaTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaTitle(this); }
 		}
 
 		///<summary>
@@ -934,6 +994,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Title: A 57 Character page title displayed in Google.
+		///</summary>
+		[ImplementPropertyType("seoMetaTitle")]
+		public string SeoMetaTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaTitle(this); }
+		}
+
+		///<summary>
 		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
 		///</summary>
 		[ImplementPropertyType("umbracoNavihide")]
@@ -999,9 +1068,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Features
 		///</summary>
 		[ImplementPropertyType("features")]
-		public object Features
+		public IEnumerable<IPublishedContent> Features
 		{
-			get { return this.GetPropertyValue("features"); }
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("features"); }
 		}
 
 		///<summary>
@@ -1121,6 +1190,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Title: A 57 Character page title displayed in Google.
+		///</summary>
+		[ImplementPropertyType("seoMetaTitle")]
+		public string SeoMetaTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaTitle(this); }
+		}
+
+		///<summary>
 		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
 		///</summary>
 		[ImplementPropertyType("umbracoNavihide")]
@@ -1132,7 +1210,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Login Page</summary>
 	[PublishedContentModel("loginPage")]
-	public partial class LoginPage : PublishedContentModel
+	public partial class LoginPage : PublishedContentModel, INavigationBase
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "loginPage";
@@ -1154,11 +1232,47 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Keywords: Keywords that describe the content of the page. This is consired optional since most modern search engines don't use this anymore
+		///</summary>
+		[ImplementPropertyType("keywords")]
+		public IEnumerable<string> Keywords
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetKeywords(this); }
+		}
+
+		///<summary>
+		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		///</summary>
+		[ImplementPropertyType("seoMetaDescription")]
+		public string SeoMetaDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Title: A 57 Character page title displayed in Google.
+		///</summary>
+		[ImplementPropertyType("seoMetaTitle")]
+		public string SeoMetaTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaTitle(this); }
+		}
+
+		///<summary>
+		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
+		///</summary>
+		[ImplementPropertyType("umbracoNavihide")]
+		public bool UmbracoNavihide
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetUmbracoNavihide(this); }
+		}
 	}
 
 	/// <summary>Registration Page</summary>
 	[PublishedContentModel("registrationPage")]
-	public partial class RegistrationPage : PublishedContentModel
+	public partial class RegistrationPage : PublishedContentModel, INavigationBase
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "registrationPage";
@@ -1179,6 +1293,42 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<RegistrationPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Keywords: Keywords that describe the content of the page. This is consired optional since most modern search engines don't use this anymore
+		///</summary>
+		[ImplementPropertyType("keywords")]
+		public IEnumerable<string> Keywords
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetKeywords(this); }
+		}
+
+		///<summary>
+		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		///</summary>
+		[ImplementPropertyType("seoMetaDescription")]
+		public string SeoMetaDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Title: A 57 Character page title displayed in Google.
+		///</summary>
+		[ImplementPropertyType("seoMetaTitle")]
+		public string SeoMetaTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaTitle(this); }
+		}
+
+		///<summary>
+		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
+		///</summary>
+		[ImplementPropertyType("umbracoNavihide")]
+		public bool UmbracoNavihide
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetUmbracoNavihide(this); }
 		}
 	}
 
