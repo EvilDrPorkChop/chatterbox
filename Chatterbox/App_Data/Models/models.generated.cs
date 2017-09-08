@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "527c23316c07d936")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9c6b7dc432055386")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -1052,9 +1052,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Features
 		///</summary>
 		[ImplementPropertyType("features")]
-		public IEnumerable<IPublishedContent> Features
+		public object Features
 		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("features"); }
+			get { return this.GetPropertyValue("features"); }
 		}
 
 		///<summary>
@@ -1126,6 +1126,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string DefaultCurrency
 		{
 			get { return this.GetPropertyValue<string>("defaultCurrency"); }
+		}
+
+		///<summary>
+		/// Exam Date Picker: Pick the dates for this exam
+		///</summary>
+		[ImplementPropertyType("examDatePicker")]
+		public DateTime ExamDatePicker
+		{
+			get { return this.GetPropertyValue<DateTime>("examDatePicker"); }
 		}
 
 		///<summary>
