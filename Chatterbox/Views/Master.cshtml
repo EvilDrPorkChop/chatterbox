@@ -1,5 +1,6 @@
 ﻿@using ContentModels = Umbraco.Web.PublishedContentModels;
 @using Umbraco.Core
+@using ClientDependency.Core.Mvc
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = null;
@@ -8,6 +9,8 @@
     ContentModels.Home home = Model.Content.Site() as ContentModels.Home;
     var colorTheme = Umbraco.GetPreValueAsString(home.ColorTheme);
     var font = Umbraco.GetPreValueAsString(home.Font);
+    
+    
 }
 
 <!doctype html>
@@ -26,8 +29,7 @@
     <meta name="author" content="">
     
     <!--START CSS-->
-    <link rel="stylesheet" href="@Url.Content("~/css/nicdark_style.css")" />
-    <link rel="stylesheet" href="@Url.Content("~/css/nicdark_responsive.css")" />
+    @Styles.Render("~/bundles/MainCSS")
     
     <!--revslider-->
     <link rel="stylesheet" href="@Url.Content("~/css/revslider/settings.css")" />
@@ -54,13 +56,10 @@
 </head>
 
 <!--main-->
-    <script src="@Url.Content("~/scripts/main/jquery.min.js")"></script> <!--Jquery-->
-    <script src="@Url.Content("~/scripts/main/jquery-ui.js")"></script> <!--Jquery UI-->
-    <script src="@Url.Content("~/scripts/main/excanvas.js")"></script> <!--canvas need for ie-->
+    @Scripts.Render("~/bundles/MainScripts")
 
-    <!--plugins-->
-    <script src="@Url.Content("~/scripts/plugins/revslider/jquery.themepunch.tools.min.js")"></script> <!--revslider-->
-    <script src="@Url.Content("~/scripts/plugins/revslider/jquery.themepunch.revolution.min.js")"></script> <!--revslider-->
+<!--plugins-->
+    @Scripts.Render("~/bundles/RevSlider")
 
     <!--menu-->
     <script src="@Url.Content("~/scripts/plugins/menu/superfish.min.js")"></script> <!--superfish-->
