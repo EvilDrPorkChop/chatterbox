@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9c6b7dc432055386")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "f6e091bec1867e46")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -1068,9 +1068,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Features
 		///</summary>
 		[ImplementPropertyType("features")]
-		public object Features
+		public IEnumerable<IPublishedContent> Features
 		{
-			get { return this.GetPropertyValue("features"); }
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("features"); }
 		}
 
 		///<summary>
