@@ -208,15 +208,15 @@ NICDARKFRAMEWORK.nicdark_calendar = function(){
 
 
 
-//START NIKmediaPARALLAX
-NICDARKFRAMEWORK.nicdark_mediaparallax = function(){
+//START NIKIMGPARALLAX
+NICDARKFRAMEWORK.nicdark_imgparallax = function(){
 
 	jQuery(document).ready(function() {
-		//$('.nicdark_mediaparallax').parallax("50%", 0.3);
+		//$('.nicdark_imgparallax').parallax("50%", 0.3);
 	});
 	
 }
-//END NIKmediaPARALLAX
+//END NIKIMGPARALLAX
 
 
 
@@ -372,7 +372,7 @@ NICDARKFRAMEWORK.nicdark_mpopup = function(){
 		mainClass: 'mfp-fade',
 		gallery: {
 			enabled: true,
-			navigateBymediaClick: true,
+			navigateByImgClick: true,
 			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
 		},
 		image: {
@@ -439,7 +439,7 @@ NICDARKFRAMEWORK.nicdark_tabs();
 NICDARKFRAMEWORK.nicdark_tooltip();
 NICDARKFRAMEWORK.nicdark_left_right_sidebar();
 NICDARKFRAMEWORK.nicdark_calendar();
-NICDARKFRAMEWORK.nicdark_mediaparallax();
+NICDARKFRAMEWORK.nicdark_imgparallax();
 NICDARKFRAMEWORK.nicdark_counter();
 NICDARKFRAMEWORK.nicdark_masonry();
 NICDARKFRAMEWORK.nicdark_mpopup();
