@@ -1,11 +1,24 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
 	Layout = "Master.cshtml";
 	
-	@Html.Partial("Login");
-	
-	
+    
+
 }
 
 @* the fun starts here *@
+@Html.Partial("Navigation/Navigation")
+@Html.Partial("RevSlider")
+@Html.Partial("SecondaryNav")
+@Html.Partial("ActivitiesLisitng")
+@Html.Partial("EventsListing")
+@Html.Partial("ActivitiesLisitng")
+@Html.Partial("ContentPreviews")
+@Html.Partial("EventsListing")
+@Html.Partial("Counter")
+@Html.Partial("TeacherPreview")
 
+
+
+@Scripts.Render("~/bundles/master")

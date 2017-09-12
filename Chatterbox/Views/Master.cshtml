@@ -17,13 +17,13 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <html>
 <head>
        @Scripts.Render("~/bundles/JQuery")
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--meta responsive-->
+    <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 
     <title>@Umbraco.Field("seoMetaTitle", altText:"Chatterbox English School")</title>
     <meta name="description" content="@Umbraco.Field("seoMetaDescription", altText:"Chatterbox English School")">
@@ -56,7 +56,7 @@
     
     @RenderSection("Header", required: false)
 </head>
-
+<body id="start_nicdark_framework">
 
 @RenderBody()
 </body>  

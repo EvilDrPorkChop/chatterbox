@@ -292,6 +292,7 @@
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
     <None Include="packages.config" />
+    <Content Include="scripts\CustomSlider.js" />
     <Content Include="scripts\plugins\revslider\jquery.themepunch.revolution.min.js" />
     <Content Include="scripts\plugins\revslider\jquery.themepunch.tools.min.js" />
     <Content Include="Views\Web.config" />
