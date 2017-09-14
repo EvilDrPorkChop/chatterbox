@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9c6b7dc432055386")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "71a44e6026cec2f8")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -269,6 +269,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string HeroHeader
 		{
 			get { return this.GetPropertyValue<string>("heroHeader"); }
+		}
+
+		///<summary>
+		/// Main Navigation Page
+		///</summary>
+		[ImplementPropertyType("mainNavigationPage")]
+		public IEnumerable<IPublishedContent> MainNavigationPage
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("mainNavigationPage"); }
 		}
 
 		///<summary>
@@ -1052,9 +1061,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Features
 		///</summary>
 		[ImplementPropertyType("features")]
-		public object Features
+		public IEnumerable<IPublishedContent> Features
 		{
-			get { return this.GetPropertyValue("features"); }
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("features"); }
 		}
 
 		///<summary>
@@ -1286,6 +1295,95 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<RegistrationPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Keywords: Keywords that describe the content of the page. This is consired optional since most modern search engines don't use this anymore
+		///</summary>
+		[ImplementPropertyType("keywords")]
+		public IEnumerable<string> Keywords
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetKeywords(this); }
+		}
+
+		///<summary>
+		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		///</summary>
+		[ImplementPropertyType("seoMetaDescription")]
+		public string SeoMetaDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Title: A 57 Character page title displayed in Google.
+		///</summary>
+		[ImplementPropertyType("seoMetaTitle")]
+		public string SeoMetaTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetSeoMetaTitle(this); }
+		}
+
+		///<summary>
+		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
+		///</summary>
+		[ImplementPropertyType("umbracoNavihide")]
+		public bool UmbracoNavihide
+		{
+			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetUmbracoNavihide(this); }
+		}
+	}
+
+	/// <summary>Single Event</summary>
+	[PublishedContentModel("singleEvent")]
+	public partial class SingleEvent : PublishedContentModel, IContentBase, INavigationBase
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "singleEvent";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public SingleEvent(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SingleEvent, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Summary Content
+		///</summary>
+		[ImplementPropertyType("summaryContent")]
+		public string SummaryContent
+		{
+			get { return this.GetPropertyValue<string>("summaryContent"); }
+		}
+
+		///<summary>
+		/// Content
+		///</summary>
+		[ImplementPropertyType("bodyText")]
+		public Newtonsoft.Json.Linq.JToken BodyText
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetBodyText(this); }
+		}
+
+		///<summary>
+		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetPageTitle(this); }
 		}
 
 		///<summary>
