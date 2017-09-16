@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "71a44e6026cec2f8")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "996486ff90703d17")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -49,6 +49,9 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Page Title</summary>
 		string PageTitle { get; }
+
+		/// <summary>Sub Title</summary>
+		string SubTitle { get; }
 	}
 
 	/// <summary>Content Base</summary>
@@ -89,7 +92,7 @@ namespace Umbraco.Web.PublishedContentModels
 		public static Newtonsoft.Json.Linq.JToken GetBodyText(IContentBase that) { return that.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("bodyText"); }
 
 		///<summary>
-		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		/// Page Title: The title of the page.
 		///</summary>
 		[ImplementPropertyType("pageTitle")]
 		public string PageTitle
@@ -99,6 +102,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Page Title</summary>
 		public static string GetPageTitle(IContentBase that) { return that.GetPropertyValue<string>("pageTitle"); }
+
+		///<summary>
+		/// Sub Title: Sub title appearing below the main page title
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return GetSubTitle(this); }
+		}
+
+		/// <summary>Static getter for Sub Title</summary>
+		public static string GetSubTitle(IContentBase that) { return that.GetPropertyValue<string>("subTitle"); }
 	}
 
 	/// <summary>Feature</summary>
@@ -189,6 +204,33 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Contact Us Page Link: Links through to contact page.
+		///</summary>
+		[ImplementPropertyType("contactUsPageLink")]
+		public IPublishedContent ContactUsPageLink
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("contactUsPageLink"); }
+		}
+
+		///<summary>
+		/// Email Address: Add your email to be contacted on.
+		///</summary>
+		[ImplementPropertyType("emailAddress")]
+		public string EmailAddress
+		{
+			get { return this.GetPropertyValue<string>("emailAddress"); }
+		}
+
+		///<summary>
+		/// Facebook URL: Add a link to your  Facebook page
+		///</summary>
+		[ImplementPropertyType("facebookURL")]
+		public string FacebookUrl
+		{
+			get { return this.GetPropertyValue<string>("facebookURL"); }
+		}
+
+		///<summary>
 		/// Font: This will be a custom property editor later
 		///</summary>
 		[ImplementPropertyType("font")]
@@ -216,15 +258,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Call To Action Link
-		///</summary>
-		[ImplementPropertyType("FooterCtalink")]
-		public IPublishedContent FooterCtalink
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("FooterCtalink"); }
-		}
-
-		///<summary>
 		/// Description
 		///</summary>
 		[ImplementPropertyType("footerDescription")]
@@ -240,6 +273,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string FooterHeader
 		{
 			get { return this.GetPropertyValue<string>("footerHeader"); }
+		}
+
+		///<summary>
+		/// Google + URL: Add a link to your Google + page
+		///</summary>
+		[ImplementPropertyType("googleURL")]
+		public string GoogleUrl
+		{
+			get { return this.GetPropertyValue<string>("googleURL"); }
 		}
 
 		///<summary>
@@ -288,12 +330,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Main Navigation Page
+		/// Phone Number: Add your Phone number
 		///</summary>
-		[ImplementPropertyType("mainNavigationPage")]
-		public IEnumerable<IPublishedContent> MainNavigationPage
+		[ImplementPropertyType("phoneNumber")]
+		public string PhoneNumber
 		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("mainNavigationPage"); }
+			get { return this.GetPropertyValue<string>("phoneNumber"); }
+		}
+
+		///<summary>
+		/// Primary Navigation
+		///</summary>
+		[ImplementPropertyType("primaryNavigation")]
+		public IEnumerable<IPublishedContent> PrimaryNavigation
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("primaryNavigation"); }
 		}
 
 		///<summary>
@@ -312,6 +363,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string Sitename
 		{
 			get { return this.GetPropertyValue<string>("sitename"); }
+		}
+
+		///<summary>
+		/// Twitter URL: Add a link to your Twitter
+		///</summary>
+		[ImplementPropertyType("twitterURL")]
+		public string TwitterUrl
+		{
+			get { return this.GetPropertyValue<string>("twitterURL"); }
 		}
 	}
 
@@ -459,12 +519,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		/// Page Title: The title of the page.
 		///</summary>
 		[ImplementPropertyType("pageTitle")]
 		public string PageTitle
 		{
 			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetPageTitle(this); }
+		}
+
+		///<summary>
+		/// Sub Title: Sub title appearing below the main page title
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetSubTitle(this); }
 		}
 
 		///<summary>
@@ -762,12 +831,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		/// Page Title: The title of the page.
 		///</summary>
 		[ImplementPropertyType("pageTitle")]
 		public string PageTitle
 		{
 			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetPageTitle(this); }
+		}
+
+		///<summary>
+		/// Sub Title: Sub title appearing below the main page title
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetSubTitle(this); }
 		}
 
 		///<summary>
@@ -842,6 +920,60 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Summary Block Description 1: Add A Description
+		///</summary>
+		[ImplementPropertyType("summaryBlockDescription1")]
+		public string SummaryBlockDescription1
+		{
+			get { return this.GetPropertyValue<string>("summaryBlockDescription1"); }
+		}
+
+		///<summary>
+		/// Summary Block Description 2: Add A Description
+		///</summary>
+		[ImplementPropertyType("summaryBlockDescription2")]
+		public string SummaryBlockDescription2
+		{
+			get { return this.GetPropertyValue<string>("summaryBlockDescription2"); }
+		}
+
+		///<summary>
+		/// Summary Block Description 3: Add A Description
+		///</summary>
+		[ImplementPropertyType("summaryBlockDescription3")]
+		public string SummaryBlockDescription3
+		{
+			get { return this.GetPropertyValue<string>("summaryBlockDescription3"); }
+		}
+
+		///<summary>
+		/// Summary Block Title 1: Add A Title
+		///</summary>
+		[ImplementPropertyType("summaryBlockTitle1")]
+		public string SummaryBlockTitle1
+		{
+			get { return this.GetPropertyValue<string>("summaryBlockTitle1"); }
+		}
+
+		///<summary>
+		/// Summary Block Title 2: Add A Title
+		///</summary>
+		[ImplementPropertyType("summaryBlockTitle2")]
+		public string SummaryBlockTitle2
+		{
+			get { return this.GetPropertyValue<string>("summaryBlockTitle2"); }
+		}
+
+		///<summary>
+		/// Summary Block Title 3: Add A Title
+		///</summary>
+		[ImplementPropertyType("summaryBlockTitle3")]
+		public string SummaryBlockTitle3
+		{
+			get { return this.GetPropertyValue<string>("summaryBlockTitle3"); }
+		}
+
+		///<summary>
 		/// Content
 		///</summary>
 		[ImplementPropertyType("bodyText")]
@@ -851,12 +983,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		/// Page Title: The title of the page.
 		///</summary>
 		[ImplementPropertyType("pageTitle")]
 		public string PageTitle
 		{
 			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetPageTitle(this); }
+		}
+
+		///<summary>
+		/// Sub Title: Sub title appearing below the main page title
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetSubTitle(this); }
 		}
 
 		///<summary>
@@ -919,6 +1060,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Person, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// About Me: 100-200 words works well.
+		///</summary>
+		[ImplementPropertyType("aboutMe")]
+		public IHtmlString AboutMe
+		{
+			get { return this.GetPropertyValue<IHtmlString>("aboutMe"); }
 		}
 
 		///<summary>
@@ -1077,9 +1227,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Features
 		///</summary>
 		[ImplementPropertyType("features")]
-		public IEnumerable<IPublishedContent> Features
+		public object Features
 		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("features"); }
+			get { return this.GetPropertyValue("features"); }
 		}
 
 		///<summary>
@@ -1181,12 +1331,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		/// Page Title: The title of the page.
 		///</summary>
 		[ImplementPropertyType("pageTitle")]
 		public string PageTitle
 		{
 			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetPageTitle(this); }
+		}
+
+		///<summary>
+		/// Sub Title: Sub title appearing below the main page title
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetSubTitle(this); }
 		}
 
 		///<summary>
@@ -1394,12 +1553,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		/// Page Title: The title of the page.
 		///</summary>
 		[ImplementPropertyType("pageTitle")]
 		public string PageTitle
 		{
 			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetPageTitle(this); }
+		}
+
+		///<summary>
+		/// Sub Title: Sub title appearing below the main page title
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetSubTitle(this); }
 		}
 
 		///<summary>
