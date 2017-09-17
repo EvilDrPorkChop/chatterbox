@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "996486ff90703d17")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "304923fc25e1398f")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -1056,6 +1056,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Banner Image: Banner image for the top of the page
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("bannerImage"); }
+		}
+
+		///<summary>
 		/// Department
 		///</summary>
 		[ImplementPropertyType("department")]
@@ -1107,6 +1116,42 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent Photo
 		{
 			get { return this.GetPropertyValue<IPublishedContent>("photo"); }
+		}
+
+		///<summary>
+		/// Quote Author: The quote author
+		///</summary>
+		[ImplementPropertyType("quoteAuthor")]
+		public string QuoteAuthor
+		{
+			get { return this.GetPropertyValue<string>("quoteAuthor"); }
+		}
+
+		///<summary>
+		/// Quote Text: Enter your favourite quote
+		///</summary>
+		[ImplementPropertyType("quoteText")]
+		public string QuoteText
+		{
+			get { return this.GetPropertyValue<string>("quoteText"); }
+		}
+
+		///<summary>
+		/// Sub Title: Sub title below your name!
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return this.GetPropertyValue<string>("subTitle"); }
+		}
+
+		///<summary>
+		/// Teacher Short Description: A short amount of text to appear in teacher's summary tile.
+		///</summary>
+		[ImplementPropertyType("teacherShortDescription")]
+		public string TeacherShortDescription
+		{
+			get { return this.GetPropertyValue<string>("teacherShortDescription"); }
 		}
 
 		///<summary>
@@ -1211,9 +1256,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Features
 		///</summary>
 		[ImplementPropertyType("features")]
-		public object Features
+		public IEnumerable<IPublishedContent> Features
 		{
-			get { return this.GetPropertyValue("features"); }
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("features"); }
 		}
 
 		///<summary>
