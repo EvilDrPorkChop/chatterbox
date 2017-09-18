@@ -347,8 +347,33 @@
     <Content Include="css\revslider\assets\small_arrows.psd" />
     <None Include="packages.config" />
     <Content Include="scripts\CustomSlider.js" />
+    <None Include="scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="scripts\jquery-3.1.1.js" />
+    <Content Include="scripts\jquery-3.1.1.min.js" />
+    <Content Include="scripts\jquery-3.1.1.slim.js" />
+    <Content Include="scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="scripts\main\excanvas.js" />
+    <Content Include="scripts\main\html5.js" />
+    <Content Include="scripts\main\jquery-ui.js" />
+    <Content Include="scripts\main\jquery.min.js" />
+    <Content Include="scripts\plugins\countdown\jquery.countdown.js" />
+    <Content Include="scripts\plugins\countto\jquery.countTo.js" />
+    <Content Include="scripts\plugins\inview\jquery.inview.min.js" />
+    <Content Include="scripts\plugins\isotope\isotope.pkgd.min.js" />
+    <Content Include="scripts\plugins\menu\superfish.min.js" />
+    <Content Include="scripts\plugins\menu\tinynav.min.js" />
+    <Content Include="scripts\plugins\mpopup\jquery.magnific-popup.min.js" />
+    <Content Include="scripts\plugins\navigation\hoverIntent.js" />
+    <Content Include="scripts\plugins\navigation\superfish.min.js" />
+    <Content Include="scripts\plugins\navigation\tinynav.min.js" />
+    <Content Include="scripts\plugins\nicescrool\jquery.nicescroll.min.js" />
+    <Content Include="scripts\plugins\parallax\jquery.parallax-1.1.3.js" />
     <Content Include="scripts\plugins\revslider\jquery.themepunch.revolution.min.js" />
     <Content Include="scripts\plugins\revslider\jquery.themepunch.tools.min.js" />
+    <Content Include="scripts\plugins\scroolto\scroolto.js" />
+    <Content Include="scripts\settings.js" />
+    <Content Include="scripts\settingsOLD.js" />
+    <Content Include="scripts\umbraco-starterkit-app.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
@@ -391,6 +416,8 @@
     <Content Include="Views\Partials\SecondaryNav.cshtml" />
     <Content Include="Views\Partials\SectionHeader.cshtml" />
     <Content Include="Views\Partials\TeacherPreview.cshtml" />
+    <Content Include="scripts\jquery-3.1.1.min.map" />
+    <Content Include="scripts\jquery-3.1.1.slim.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
