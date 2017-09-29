@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "3c19c41234484ccf")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6aa567db1a457242")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -730,6 +730,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString ContactIntro
 		{
 			get { return this.GetPropertyValue<IHtmlString>("contactIntro"); }
+		}
+
+		///<summary>
+		/// Email Address
+		///</summary>
+		[ImplementPropertyType("emailAddress")]
+		public string EmailAddress
+		{
+			get { return this.GetPropertyValue<string>("emailAddress"); }
+		}
+
+		///<summary>
+		/// Email  Sub Title
+		///</summary>
+		[ImplementPropertyType("emailSubTitle")]
+		public string EmailSubTitle
+		{
+			get { return this.GetPropertyValue<string>("emailSubTitle"); }
 		}
 
 		///<summary>
