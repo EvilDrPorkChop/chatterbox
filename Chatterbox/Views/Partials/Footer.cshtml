@@ -14,17 +14,17 @@
             <div class="nicdark_space20"></div>
 
             <div class="nicdark_margin10">
-                <h4 class="white">@Model.Content.Parent.GetPropertyValue("footerHeader")</h4>
+                <h4 class="white">@Umbraco.TypedContentAtRoot().FirstOrDefault().GetPropertyValue("footerHeader")</h4>
                 <div class="nicdark_space20"></div>
                 <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
                 <div class="nicdark_space20"></div>
-                <p class="white">@Model.Content.Parent.GetPropertyValue("footerDescription")</p>
+                <p class="white">@Umbraco.TypedContentAtRoot().FirstOrDefault().GetPropertyValue("footerDescription")</p>
                 <div class="nicdark_space20"></div>
                 <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
                 <div class="nicdark_space20"></div>
-                <a href="mailTo:@Model.Content.Parent.GetPropertyValue("emailAddress")" class="nicdark_btn_icon nicdark_bg_orange small nicdark_shadow nicdark_radius white"><i class="icon-mail-1 nicdark_rotate"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="@Model.Content.Parent.GetPropertyValue("contactUsPageLink")" class="nicdark_btn_icon nicdark_bg_yellow small nicdark_shadow nicdark_radius white"><i class="icon-home nicdark_rotate"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="tel:@Model.Content.Parent.GetPropertyValue("phoneNumber")" class="nicdark_btn_icon nicdark_bg_red small nicdark_shadow nicdark_radius white"><i class="icon-phone-outline nicdark_rotate"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="mailTo:@Umbraco.TypedContentAtRoot().FirstOrDefault().GetPropertyValue("emailAddress")" class="nicdark_btn_icon nicdark_bg_orange small nicdark_shadow nicdark_radius white"><i class="icon-mail-1 nicdark_rotate"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="@Umbraco.TypedContentAtRoot().FirstOrDefault().GetPropertyValue("contactUsPageLink")" class="nicdark_btn_icon nicdark_bg_yellow small nicdark_shadow nicdark_radius white"><i class="icon-home nicdark_rotate"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="tel:@Umbraco.TypedContentAtRoot().FirstOrDefault().GetPropertyValue("phoneNumber")" class="nicdark_btn_icon nicdark_bg_red small nicdark_shadow nicdark_radius white"><i class="icon-phone-outline nicdark_rotate"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
         </div>
 
@@ -148,13 +148,13 @@
         <div class="grid grid_6">
             <div class="nicdark_focus right nicdark_aligncenter_iphoneland nicdark_aligncenter_iphonepotr">
                 <div class="nicdark_margin10">
-                    <a href="@Model.Content.Parent.GetPropertyValue("facebookURL")" class="nicdark_facebook nicdark_press right nicdark_btn_icon small nicdark_radius white"><i class="icon-facebook-1"></i></a>
+                    <a href="@Umbraco.TypedContentAtRoot().FirstOrDefault().GetPropertyValue("facebookURL")" class="nicdark_facebook nicdark_press right nicdark_btn_icon small nicdark_radius white"><i class="icon-facebook-1"></i></a>
                 </div>
                 <div class="nicdark_margin10">
-                    <a href="@Model.Content.Parent.GetPropertyValue("googleURL")" class="nicdark_press right nicdark_btn_icon nicdark_bg_red nicdark_shadow small nicdark_radius white"><i class="icon-gplus"></i></a>
+                    <a href="@Umbraco.TypedContentAtRoot().FirstOrDefault().GetPropertyValue("googleURL")" class="nicdark_press right nicdark_btn_icon nicdark_bg_red nicdark_shadow small nicdark_radius white"><i class="icon-gplus"></i></a>
                 </div>
                 <div class="nicdark_margin10">
-                    <a href="@Model.Content.Parent.GetPropertyValue("twitterURL")" class="nicdark_press right nicdark_btn_icon nicdark_bg_blue nicdark_shadow small nicdark_radius white"><i class="icon-twitter-1"></i></a>
+                    <a href="@Umbraco.TypedContentAtRoot().FirstOrDefault().GetPropertyValue("twitterURL")" class="nicdark_press right nicdark_btn_icon nicdark_bg_blue nicdark_shadow small nicdark_radius white"><i class="icon-twitter-1"></i></a>
                 </div>
                 <div class="nicdark_margin10">
                     <a href="#start_nicdark_framework" class="nicdark_zoom nicdark_internal_link right nicdark_btn_icon nicdark_bg_greydark2 small nicdark_radius white"><i class="icon-up-outline"></i></a>

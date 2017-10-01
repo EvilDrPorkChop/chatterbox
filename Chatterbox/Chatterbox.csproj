@@ -276,11 +276,15 @@
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="css\animate.css" />
     <Content Include="css\fontello.css" />
+    <Content Include="css\icons\responsivenav.svg" />
     <Content Include="css\magnific-popup.css" />
+    <Content Include="css\navigation\ie.css" />
+    <Content Include="css\navigation\styles.css" />
     <Content Include="css\nicdark_menu.css" />
     <Content Include="css\nicdark_responsive.css" />
     <Content Include="css\nicdark_shortcodes.css" />
     <Content Include="css\nicdark_style.css" />
+    <Content Include="css\responsive-nav.css" />
     <Content Include="css\revslider\assets\arrowleft.png" />
     <Content Include="css\revslider\assets\arrowright.png" />
     <Content Include="css\revslider\assets\arrow_large_left.png" />
@@ -320,6 +324,7 @@
     <Content Include="css\revslider\assets\white50.png" />
     <Content Include="css\revslider\settings.css" />
     <Content Include="css\umbraco-starterkit-style.css" />
+    <Content Include="Font\icons\responsivenav.svg" />
     <Content Include="img\slide\img1.jpg" />
     <Content Include="img\slide\img2.jpg" />
     <Content Include="img\slide\img3.jpg" />
@@ -345,6 +350,12 @@
     <Content Include="css\revslider\assets\arrows.psd" />
     <Content Include="css\revslider\assets\bullets.psd" />
     <Content Include="css\revslider\assets\small_arrows.psd" />
+    <Content Include="Font\icons\responsivenav.eot" />
+    <Content Include="Font\icons\responsivenav.ttf" />
+    <Content Include="Font\icons\responsivenav.woff" />
+    <Content Include="css\icons\responsivenav.eot" />
+    <Content Include="css\icons\responsivenav.ttf" />
+    <Content Include="css\icons\responsivenav.woff" />
     <None Include="packages.config" />
     <Content Include="scripts\CustomSlider.js" />
     <None Include="scripts\jquery-3.1.1.intellisense.js" />
@@ -419,6 +430,7 @@
     <Content Include="scripts\jquery-3.1.1.min.map" />
     <Content Include="scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Views\Partials\TeacherTiles.cshtml" />
+    <Content Include="Views\Partials\Navigation\ResponsiveNav.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

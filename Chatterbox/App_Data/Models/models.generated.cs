@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6aa567db1a457242")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a92bdbd71a8114fc")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -296,7 +296,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Description
+		/// Description: Description underneath main H1
 		///</summary>
 		[ImplementPropertyType("heroDescription")]
 		public string HeroDescription
@@ -305,7 +305,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Header: This is the main headline for the hero area on the Homepage
+		/// Main Header: This is the main headline for the H1 on the Homepage
 		///</summary>
 		[ImplementPropertyType("heroHeader")]
 		public string HeroHeader
@@ -1434,7 +1434,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Login Page</summary>
 	[PublishedContentModel("loginPage")]
-	public partial class LoginPage : PublishedContentModel, INavigationBase
+	public partial class LoginPage : PublishedContentModel, IBannerImages, INavigationBase
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "loginPage";
@@ -1455,6 +1455,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LoginPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Slider Images: Choose the images for the banner on this page.
+		///</summary>
+		[ImplementPropertyType("sliderImages")]
+		public IEnumerable<IPublishedContent> SliderImages
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerImages.GetSliderImages(this); }
 		}
 
 		///<summary>
@@ -1652,6 +1661,52 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetUmbracoNavihide(this); }
 		}
+	}
+
+	// Mixin content Type 1436 with alias "bannerImages"
+	/// <summary>Banner Images</summary>
+	public partial interface IBannerImages : IPublishedContent
+	{
+		/// <summary>Slider Images</summary>
+		IEnumerable<IPublishedContent> SliderImages { get; }
+	}
+
+	/// <summary>Banner Images</summary>
+	[PublishedContentModel("bannerImages")]
+	public partial class BannerImages : PublishedContentModel, IBannerImages
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "bannerImages";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public BannerImages(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BannerImages, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Slider Images: Choose the images for the banner on this page.
+		///</summary>
+		[ImplementPropertyType("sliderImages")]
+		public IEnumerable<IPublishedContent> SliderImages
+		{
+			get { return GetSliderImages(this); }
+		}
+
+		/// <summary>Static getter for Slider Images</summary>
+		public static IEnumerable<IPublishedContent> GetSliderImages(IBannerImages that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("sliderImages"); }
 	}
 
 	/// <summary>Folder</summary>
