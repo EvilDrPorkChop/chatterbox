@@ -99,12 +99,30 @@ JQUERY UI
 .nicdark_bg_orangedark{ background-color: #df764e; }
 .nicdark_bg_reddark{ background-color: #c86969; }
 .nicdark_bg_yellowdark{ background-color: #e0b84e; }
-.chatterbox_custom_red{ background-color: #E1464B; }
-.chatterbox_custom_verydarkblue{ background-color: #2E3956; }
-.chatterbox_custom_blue{ background-color: #406d94; }
-.chatterbox_custom_lightblue{ background-color: #a8d0d9; }
-.chatterbox_custom_bluegrey{ background-color: #d7e8e8; }
-.chatterbox_custom_grey{ background-color: #e2e3dd; }
+/* Start Chatterbox Custom Colours*/
+/*Backgrounds*/
+.chatterbox_bg_red{ background-color: #E1464B; }
+.chatterbox_bg_verydarkblue{ background-color: #2E3956; }
+.chatterbox_bg_blue{ background-color: #406d94; }
+.chatterbox_bg_lightblue{ background-color: #a8d0d9; }
+.chatterbox_bg_bluegrey{ background-color: #d7e8e8; }
+.chatterbox_bg_grey{ background-color: #e2e3dd; }
+/*Text Colours*/
+.chatterbox_red{ color: #E1464B; }
+.chatterbox_verydarkblue{ color: #2E3956; }
+.chatterbox_blue{ color: #406d94; }
+.chatterbox_lightblue{ color: #a8d0d9; }
+.chatterbox_bluegrey{ color: #d7e8e8; }
+.chatterbox_grey{ color: #e2e3dd; }
+/*End Chatterbox Colours*/
+/* Union Jack Colours*/
+.flag_blue {color: rgb(0, 43, 127);}
+.flag_red {color: rgb(232,17,45);}
+.flag_white {Color:rgb(255,255,255) ;}
+.flag_bg_blue {background-color: rgb(0, 43, 127);}
+.flag_bg_red {background-color: rgb(232,17,45);}
+.flag_bg_white {background-Color:rgb(255,255,255) ;}
+/*End UJ Colours*/
 .nicdark_bg_gradient{ 
 	background: #74cee4; /* Old browsers */
 	background: -moz-linear-gradient(left,  #74cee4 0%, #66ce9c 16%, #edbf47 32%, #ec774b 49%, #74cee4 65%, #66ce9c 83%, #edbf47 100%); /* FF3.6+ */

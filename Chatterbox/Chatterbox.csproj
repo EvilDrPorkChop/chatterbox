@@ -367,6 +367,10 @@
     <Content Include="scripts\main\html5.js" />
     <Content Include="scripts\main\jquery-ui.js" />
     <Content Include="scripts\main\jquery.min.js" />
+    <Content Include="scripts\Navigation\fastclick.js" />
+    <Content Include="scripts\Navigation\fixed-responsive-nav.js" />
+    <Content Include="scripts\Navigation\responsive-nav.js" />
+    <Content Include="scripts\Navigation\scroll.js" />
     <Content Include="scripts\plugins\countdown\jquery.countdown.js" />
     <Content Include="scripts\plugins\countto\jquery.countTo.js" />
     <Content Include="scripts\plugins\inview\jquery.inview.min.js" />
